@@ -1,0 +1,67 @@
+@mixin custom-flex($gap: 1em, $dir: column) {
+  @include flex;
+  flex-direction: $dir;
+  align-items: center;
+  gap: $gap;
+}
+
+.footer-wrapper {
+  background-color: $dark-blue;
+  padding: 5px;
+}
+
+.footer {
+  padding: 2em 0;
+  color: $grayish-blue;
+
+  a {
+    color: $white;
+  }
+
+  @include flex;
+  // justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5em;
+
+  @include lg {
+    flex-direction: initial;
+  }
+
+  & > div:first-child {
+    flex: 1;
+    @include custom-flex;
+    @include lg {
+      @include custom-flex($gap: 6em, $dir: row);
+    }
+
+    gap: 1em;
+
+    ul {
+      @include custom-flex;
+    }
+
+    // social media icons
+    .icons {
+      @include custom-flex($gap: 1em);
+
+      @include lg {
+        gap: 3em;
+      }
+
+      & > div:last-child {
+        @include flex;
+        gap: 1em;
+      }
+    }
+  }
+
+  & > div:last-child {
+    @include custom-flex;
+    padding: 5px;
+  }
+
+  svg {
+    cursor: pointer;
+  }
+}

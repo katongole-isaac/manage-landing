@@ -1,20 +1,21 @@
 import React from "react";
-import "./app.css";
 import "./sass/index.scss";
-import data from "./data.toml";
-import dataInJsonFormat from "./data.json";
+import Navbar from "./components/Navbar";
+import Showcase from "./components/Showcase";
+import Services from "./components/Services";
+import Articles from "./components/Articles";
+import Footer from "./components/Footer";
 
 export default function () {
   return (
     <>
-      <div>
-        <h2>Welcome to react</h2>
-      </div>
-      <div className="footer">
-        <p>
-          Developed by <span className="text-pink">{data.name}</span>
-        </p>
-      </div>
+      <Navbar />
+      <main>
+        <Showcase />
+        <Services />
+        <Articles />
+        <Footer />
+      </main>
     </>
   );
 }

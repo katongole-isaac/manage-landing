@@ -1,5 +1,15 @@
-$color :  palevioletred;
+@import "./variable";
 
-.text-pink {
-    color: $color;
-}
+@import "./utils/breakpoints";
+
+@import "./base/reset";
+
+@import "./modules/navbar";
+
+@import "./modules/showcase";
+
+@import "./modules/services";
+
+@import "./modules/articles";
+
+@import "./modules/footer";

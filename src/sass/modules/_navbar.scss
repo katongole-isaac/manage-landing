@@ -1,0 +1,111 @@
+@mixin flex() {
+  display: flex;
+}
+
+.nav {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  .nav-bar {
+    @include flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    padding: 5px;
+
+    // .nav-links,
+    .btn {
+      display: none;
+      @include md {
+        display: inline-block;
+      }
+    }
+
+    .nav-links {
+      padding: 2em 0;
+      position: absolute;
+      // max-width: 200px;
+      width: 350px;
+      margin: auto;
+      top: -50%;
+      left: 20%;
+      z-index: 999;
+      background-color: $white;
+      @include flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: top 0.5s;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+      @include md {
+        position: relative;
+        margin: initial;
+        background: none;
+        z-index: initial;
+        box-shadow: none;
+        top: auto;
+        left: auto;
+        width: auto;
+        flex-direction: row;
+        padding: 0;
+      }
+    }
+
+    input#chck:checked ~ .nav-links {
+      top: 10%;
+    }
+
+    ul {
+      @include flex;
+      gap: 1.5em;
+
+      a {
+        color: $grayish-blue;
+        position: relative;
+
+        // hover effect
+        &::before {
+          content: "";
+          width: 0px;
+          height: 3px;
+          background-image: linear-gradient(-270deg, $lime-green, $bright-cyan);
+          position: absolute;
+          top: 100%;
+          transition: 0.5s;
+        }
+
+        &:hover {
+          color: $dark-blue;
+
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+    // end of ul styles
+
+    .actions {
+      img {
+        cursor: pointer;
+      }
+
+      label[for="chck"] {
+        img {
+          width: 20px;
+          height: 20px;
+        }
+        padding: 0.6em;
+
+        .icon-wrapper {
+          width: 30px;
+          height: 30px;
+        }
+
+        @include md {
+          display: none;
+        }
+      }
+    }
+  }
+}
