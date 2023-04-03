@@ -19,9 +19,6 @@ export default function Showcase() {
           <button>Request Invite</button>
         </div>
         <div className="right-panel">
-          <picture>
-            <source  media />
-          </picture>
           <img
             src={BgPhoneImage}
             alt="phone-mockups-display"
