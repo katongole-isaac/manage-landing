@@ -59,6 +59,16 @@
   & > div:last-child {
     @include custom-flex;
     padding: 5px;
+    small {
+      a {
+        cursor: pointer;
+        color: wheat;
+        &:hover {
+          color: $white;
+
+        }
+      }
+    }
   }
 
   svg {

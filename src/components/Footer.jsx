@@ -82,14 +82,27 @@ export default function Footer() {
           </div>
 
           <ul>
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
-            <a href="#">Blog</a>
+            <li>
+              <a href="#">About Us</a>
+            </li>
+
+            <li>
+              <a href="#">Contact</a>
+            </li>
+            <li>
+              <a href="#">Blog</a>
+            </li>
           </ul>
           <ul>
-            <a href="#">Careers</a>
-            <a href="#">Support</a>
-            <a href="#">Privacy Policy</a>
+            <li>
+              <a href="#">Careers</a>
+            </li>
+            <li>
+              <a href="#">Support</a>
+            </li>
+            <li>
+              <a href="#">Privacy Policy</a>
+            </li>
           </ul>
         </div>
 
@@ -97,6 +110,14 @@ export default function Footer() {
           <button>Request Invite</button>
 
           <p> &copy; Easybank. All Rights Reserved</p>
+          <small>
+            Made with 💓 by{" "}
+            <b>
+              <a href="https://github.com/katongole-isaac/easybank">
+                isaac-Repository
+              </a>
+            </b>
+          </small>
         </div>
       </div>
     </div>
