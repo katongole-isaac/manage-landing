@@ -18,13 +18,15 @@ export default function Showcase() {
 
           <button>Request Invite</button>
         </div>
-        <div className="right-panel">
+        {/* <div className="right-panel">
+          
           <img
             src={BgPhoneImage}
             alt="phone-mockups-display"
             className="img-phone"
           />
-        </div>
+        </div> */}
+        <div className="homepage-bg"></div>
       </div>
     </div>
   );

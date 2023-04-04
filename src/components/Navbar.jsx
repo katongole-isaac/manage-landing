@@ -5,10 +5,27 @@ import CloseIcon from "../easybank/images/icon-close.svg";
 
 export default function Navbar() {
   const [showBtn, setshowBtn] = useState(false);
+  const [scrollCount, setScrollCount] = useState(0);
+  const navRef = useRef();
+
+  // showing & hiding the navbar on scroll.
+  useEffect(() => {
+    window.document.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.document.removeEventListener("scroll", handleScroll);
+    };
+  });
+
+  const handleScroll = (e) => {
+    if (window.scrollY > scrollCount) navRef.current.style.top = "-200px";
+    else navRef.current.style.top = "0";
+    setScrollCount(window.scrollY);
+  };
 
   return (
     <>
-      <nav className="nav">
+      <nav className="nav" ref={navRef}>
         <div className="container nav-bar ">
           <div className="brand">
             <a href="#">
@@ -35,7 +52,6 @@ export default function Navbar() {
             </li>
           </ul>
 
-          <button className="btn">Request Invite</button>
           <div className="actions">
             <label htmlFor="chck" onClick={() => setshowBtn((prev) => !prev)}>
               {!showBtn ? (
@@ -45,6 +61,7 @@ export default function Navbar() {
               )}
             </label>
           </div>
+          <button className="btn">Request Invite</button>
         </div>
       </nav>
     </>

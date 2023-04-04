@@ -3,7 +3,12 @@
 }
 
 .nav {
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  position: sticky;
+  top: 0;
+  background-color: $white;
+  z-index: 100;
+  transition: top .5s;
   .nav-bar {
     @include flex;
     justify-content: space-between;
@@ -28,14 +33,13 @@
       margin: auto;
       top: -50%;
       left: 20%;
-      z-index: 999;
       background-color: $white;
       @include flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       transition: top 0.5s;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
       @include md {
         position: relative;

@@ -1,91 +1,41 @@
+@mixin bg-image(
+  $width: 100%,
+  $divTop: 0rem,
+  $divRight: 0rem,
+  $bgSize: cover,
+  $bgTop: 0rem,
+  $bgRight: 0rem
+) {
+  width: $width;
+  top: $divTop;
+  right: $divRight;
+  background-size: $bgSize;
+  background-position: top $bgTop right $bgRight;
+}
+
+//homepage configs
+@mixin hmpageBg($pos: relative, $minH: 0, $order: 0) {
+  position: $pos;
+  min-height: $minH;
+  order: $order;
+}
+
 .show-case {
-  position: relative;
   min-height: 65vh;
   display: grid;
-  overflow-wrap: hidden;
   grid-template-columns: 1fr;
 
-  @include lg {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .right-panel {
-    position: relative;
-    justify-content: center;
-    @include flex;
-    overflow: hidden;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 2%;
+    top: -5%;
+    background-image: url("../../easybank/images/image-mockups.png");
+    clip-path: inset(12.2% 0% 0% 0%);
 
-    @include md {
-      height: 80%;
-    }
-    @include lg {
-      height: auto;
-      order: 3;
-      overflow: visible;
-    }
-
-    @include xl {
-      overflow: visible;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      image-rendering: auto;
-      position: relative;
-      object-fit: cover;
-      clip-path: inset(25% 1% 1% 1%);
-
-      @include md {
-        width: 70%;
-        height: auto;
-        margin: auto;
-        clip-path: inset(20% 1% 1% 1%);
-      }
-
-      @include lg {
-        clip-path: inset(115px 1% 1% 1%);
-        width: 100%;
-        margin: 0;
-        position: absolute;
-      }
-
-      @include xl {
-        width: 100%;
-        clip-path: inset(15.5% 1% 1% 1%);
-      }
-    }
-
-    // fixing overflow on width btw 1200px to 1300px
-    @media screen and (min-width: 1200px) {
-      img {
-        width: 100%;
-        clip-path: inset(17% 1% 1% 1%);
-      }
-    }
-
-    @media screen and (min-width: 1400px) {
-      img {
-        width: auto;
-        clip-path: inset(13.3% 1% 1% 1%);
-      }
-      .img-phone {
-        top: -20%;
-        right: -20%;
-      }
-    }
-
-    .img-phone {
-      top: -30%;
-      margin: auto;
-
-      @include sm {
-        top: -25%;
-      }
-      @include lg {
-        top: -20%;
-      }
-    }
+    background-repeat: no-repeat;
+    object-fit: cover;
   }
 
   .left-panel {
@@ -93,6 +43,7 @@
     text-align: center;
     position: relative;
     top: -10%;
+    z-index: 2;
     // flex from navbar module
     @include flex;
     gap: 2em;
@@ -118,29 +69,127 @@
     button {
       margin: auto;
 
+      // button @lg screen
       @include lg {
         margin: 0;
       }
+    }
+
+    // left panel @xs screen
+    @include xs {
+      padding: 2rem 0;
+    }
+
+    @include sm {
+      padding: 3em;
+    }
+    @include md {
+      padding: 1em 0;
     }
   }
 }
 
 .show-case-wrapper {
+  position: relative;
+  .homepage-bg {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    &::after {
+      content: "";
+      width: 90%;
+      height: 75rem;
+      position: absolute;
+      right: -35rem;
+      top: -25rem;
+      background-size: contain;
+      background-image: url("../../easybank/images/bg-intro-desktop.svg");
+      background-repeat: no-repeat;
+
+      // .homepage-bg::after @xs screen
+      @include xs {
+        height: 70rem;
+        @include bg-image($divTop: -35rem, $bgRight: -30rem);
+      }
+      // .homepage-bg::after @sm screen
+      @include sm {
+        @include bg-image($divTop: -10rem, $bgRight: -20rem, $bgTop: -30rem);
+      }
+
+      @include lg {
+        height: 75rem;
+        @include bg-image(
+          $divTop: -25rem,
+          $bgSize: contain,
+          $bgRight: -22rem,
+          $bgTop: 0rem
+        );
+      }
+    }
+
+    // showcase @xs screen
+    @include xs {
+      @include hmpageBg($minH: 30rem, $order: 1);
+    }
+
+    @include sm {
+      @include hmpageBg($minH: 35rem, $order: 1);
+    }
+    @include lg {
+      @include hmpageBg($pos: absolute);
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    min-width: 24rem;
+    background-image: url("../../easybank/images/image-mockups.png");
+    background-repeat: no-repeat;
+    left: auto;
+    transform: none;
+    max-width: none;
+
+    @include bg-image(
+      $width: 57%,
+      $divRight: -17rem,
+      $divTop: -6rem,
+      $bgSize: contain
+    );
+
+    //show-case-wrapper::after @xs screen
+    @include xs {
+      transform: translate(-50%);
+      height: 30rem;
+      left: 50%;
+      max-width: 28rem;
+      @include bg-image($bgSize: contain);
+    }
+
+    //show-case-wrapper::after @sm screen
+    @include sm {
+      height: 100%;
+      @include bg-image($bgSize: contain, $divTop: -18rem, $divRight: 0rem);
+    }
+
+    @include md {
+      height: 90%;
+      @include bg-image($bgSize: contain, $divTop: -16rem, $divRight: 6rem);
+    }
+
+    @include lg {
+      height: 60rem;
+      @include bg-image(
+        $bgSize: contain,
+        $divTop: -8rem,
+        $divRight: 2rem,
+        $width: 57%
+      );
+    }
+  }
+
   background: $very-light-gray;
-  background-image: url("../../easybank/images/bg-intro-desktop.svg");
-  background-repeat: no-repeat;
-  background-position: right -270px top -650px;
-  min-height: 65vh;
-
-  @include sm() {
-    background-position: right -270px top -500px;
-  }
-
-  @include lg {
-    background-position: right -570px top -300px;
-  }
-
-  @include xl {
-    background-position: right -260px top -400px;
-  }
 }

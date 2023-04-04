@@ -14,8 +14,8 @@ export default function () {
         <Showcase />
         <Services />
         <Articles />
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 }
