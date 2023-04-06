@@ -2,6 +2,11 @@
 
 The landing page is available [here](https://katongole-isaac.github.io/easybank/ "Easybank landing page") -->
 
+<div align="center" >
+<a href="mailto:katongolelsaac78@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></img></a>
+
+</div>
+
 <center >  <h2> Manage landing page </h2> </center>
 
 > _This is a solution to this challenge found on [frontendmentor.io](https://www.frontendmentor.io/challenges/manage-landing-page-SLXqC6P5 "frontend mentor")_.
@@ -31,5 +36,5 @@ The landing page is available [here](https://katongole-isaac.github.io/easybank/
 ## **Author**
 
 - [LinkedIn](https://www.linkedin.com/in/katongole-isaac-7a22aa178/ "LinkedIn")
-- [Gmail](katongolelsaac78@gmail.com, "Gmail")
+- [Gmail](mailto:katongolelsaac78@gmail.com, "Gmail")
 - [Twitter]
