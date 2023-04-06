@@ -1,11 +1,4 @@
 import React from "react";
-import logo from "../easybank/images/logo.svg";
-import fbIcon from "../easybank/images/icon-facebook.svg";
-import InstaIcon from "../easybank/images/icon-instagram.svg";
-import pinterestIcon from "../easybank/images/icon-pinterest.svg";
-import twiiterIcon from "../easybank/images/icon-twitter.svg";
-import youtubeIcon from "../easybank/images/icon-youtube.svg";
-import closIcon from "../easybank/images/icon-close.svg";
 
 export default function Footer() {
   return (

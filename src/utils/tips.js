@@ -1,8 +1,3 @@
-import OpenAPIIcon from "../easybank/images/icon-api.svg";
-import BankingIcon from "../easybank/images/icon-online.svg";
-import BudgetingIcon from "../easybank/images/icon-budgeting.svg";
-import OnboardingIcon from "../easybank/images/icon-onboarding.svg";
-
 const tips = [
   {
     title: " Track company-wide progress",

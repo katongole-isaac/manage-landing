@@ -1,5 +1,4 @@
 import React from "react";
-import BgPhoneImage from "../easybank/images/image-mockups.png";
 
 export default function Showcase() {
   return (
