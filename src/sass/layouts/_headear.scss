@@ -1,0 +1,10 @@
+header {
+  background-image: url("../../manage/images/bg-tablet-pattern.svg");
+  background-size: 50rem;
+  background-repeat: no-repeat;
+  background-position: top -15em right -20rem;
+
+  @include lg {
+    background-position: top -15em right -2rem;
+  }
+}

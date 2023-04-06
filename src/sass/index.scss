@@ -1,16 +1,22 @@
 @import "./variable";
 
-
 @import "./utils/breakpoints";
 
+@import "./utilities";
+
 @import "./base/reset";
+
+// layouts
+@import './layouts/headear';
+
+@import "./modules/intro";
 
 @import "./modules/navbar";
 
 @import "./modules/showcase";
 
-@import "./modules/services";
+@import "./modules/reviews";
 
-@import "./modules/articles";
+@import "./modules/tips";
 
 @import "./modules/footer";

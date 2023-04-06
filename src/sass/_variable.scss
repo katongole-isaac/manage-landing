@@ -1,13 +1,28 @@
 $maxWidth: 1200px;
 
+// font-
+$fontSize: 18px;
+
 // colors
 $grayish-blue: hsl(233, 8%, 62%);
 $light-grayish: hsl(220, 16%, 96%);
 $very-light-gray: hsl(0, 0%, 98%);
 $white: hsl(0, 0%, 100%);
-$dark-blue: hsl(233, 26%, 24%);
+// $dark-blue: hsl(233, 26%, 24%);
 $lime-green: hsl(136, 65%, 51%);
 $bright-cyan: hsl(192, 70%, 51%);
+
+// recent colors
+
+//primary colors
+$bright-red: hsl(12, 88%, 59%);
+$dark-blue: hsl(228, 39%, 23%);
+
+//others
+$dark-grayish-blue: hsl(227, 12%, 61%);
+$very-dark-blue: hsl(233, 12%, 13%);
+$very-pale-red: hsl(13, 100%, 96%);
+$very-light-gray: hsl(0, 0%, 98%);
 
 // Breakpoints
 $breakpoint-xs: 576px;

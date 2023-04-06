@@ -6,7 +6,7 @@
 }
 
 .footer-wrapper {
-  background-color: $dark-blue;
+  background-color: $very-dark-blue;
   padding: 5px;
 }
 
@@ -15,7 +15,13 @@
   color: $grayish-blue;
 
   a {
+    transition: all 0.2s;
     color: $white;
+
+    &:hover {
+      color: $bright-red;
+      padding: 0.3em 0;
+    }
   }
 
   @include flex;
@@ -54,9 +60,27 @@
         gap: 1em;
       }
     }
+
+    svg {
+      cursor: pointer;
+      path {
+        &:hover {
+          fill: $bright-red;
+        }
+      }
+    }
   }
 
   & > div:last-child {
+
+    .ctrls {
+    @include custom-flex($dir: row);
+
+    }
+    button {
+      width: auto;
+    }
+
     @include custom-flex;
     padding: 5px;
     small {
@@ -64,14 +88,9 @@
         cursor: pointer;
         color: wheat;
         &:hover {
-          color: $white;
-
+          color: $bright-red;
         }
       }
     }
-  }
-
-  svg {
-    cursor: pointer;
   }
 }

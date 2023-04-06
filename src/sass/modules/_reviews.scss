@@ -1,0 +1,86 @@
+.reviews {
+  margin-bottom: 1em;
+
+  @include md {
+    padding-bottom: 3em;
+  }
+
+  &-title {
+    text-align: center;
+    padding: 2em 0;
+    h2 {
+      color: $dark-blue;
+      font-size: 2.5rem;
+    }
+  }
+
+  &-wrapper {
+    margin-top: 3em;
+
+    .ctrls {
+      margin: 2em auto;
+      @include flexProps($gap: 0.5em, $jsfy: center);
+      .dot {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 2px solid $bright-red;
+        transition: background-color 0.3s;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .active {
+        background-color: $bright-red;
+      }
+      @include md {
+        display: none;
+      }
+    }
+
+    @include md {
+      @include flexProps($gap: 2em, $wrap: wrap);
+    }
+    @include lg {
+      @include flexProps($gap: 2em, $wrap: initial);
+    }
+  }
+
+  .btn {
+    @include flexProps($jsfy: center);
+  }
+
+  .review {
+    max-width: 400px;
+    text-align: center;
+    margin: auto;
+    background: $very-light-gray;
+    padding: 0 1em;
+    // margin-bottom: 1em !important;
+    position: relative;
+    @include flexProps($dir: column, $gap: 1.4em);
+    .avatar-wrapper {
+      width: 100px;
+      height: 100px;
+      align-self: center;
+      position: relative;
+      @include positionElem($top: -3rem);
+    }
+
+    p {
+      @include positionElem($top: -3rem);
+
+      color: $dark-grayish-blue;
+      line-height: 1.5em;
+    }
+
+    h2 {
+      @include positionElem($top: -3rem);
+      color: $dark-blue;
+    }
+
+    @include md {
+      margin-bottom: 2em;
+    }
+  }
+}

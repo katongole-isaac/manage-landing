@@ -1,0 +1,35 @@
+// frequently used props for flex.
+@mixin flexProps(
+  $gap: initial,
+  $wrap: initial,
+  $jsfy: initial,
+  $algn: initial,
+  $dir: row
+) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jsfy;
+  align-items: $algn;
+  gap: $gap;
+  flex-wrap: $wrap;
+}
+
+// used to positon Element
+@mixin positionElem(
+  $pos: relative,
+  $top: initial,
+  $right: initial,
+  $bottom: initial,
+  $left: initial
+) {
+  position: $pos;
+  top: $top;
+  right: $right;
+  left: $left;
+  bottom: $bottom;
+}
+
+@mixin text-configs($wd-space: 0.15em, $lineH: 1.5em) {
+  line-height: $lineH;
+  word-spacing: $wd-space;
+}

@@ -1,0 +1,88 @@
+.tips {
+  .header {
+    text-align: center;
+    padding: 1em;
+    @include flexProps($gap: 1em, $dir: column);
+    h1 {
+      color: $dark-blue;
+      font-size: 2.5rem;
+    }
+
+    p {
+      color: $grayish-blue;
+      // @include text-configs($wd-space: );
+    }
+    @include md {
+      text-align: initial;
+    }
+  }
+
+  .tip {
+    padding: 1em 0 1em 1em;
+
+    .title {
+      @include flexProps($gap: 1em, $algn: center);
+      // border: 1px solid coral;
+      margin-left: 0.2em;
+      margin-bottom: 1em;
+      // border-radius: 10px;
+      background-color: lighten($color: $bright-red, $amount: 35%);
+
+      @include md {
+        background: none;
+      }
+      min-height: 40px;
+      max-height: 50px;
+      h3:nth-of-type(1) {
+        color: $dark-blue;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      & > div {
+        @include flexProps($jsfy: center, $algn: center);
+        @include positionElem($top: 0.5em, $left: -0.5em);
+        padding: 0.5em 0.9em;
+        border-radius: 22px;
+        max-width: 110px;
+        width: 100px;
+        background-color: $bright-red;
+        color: $white;
+        margin-bottom: 1em;
+      }
+    }
+
+    .content {
+      color: $grayish-blue;
+      p {
+        @include text-configs;
+      }
+    }
+  }
+
+  &-insider {
+    @include md {
+      @include flexProps($gap: 2em);
+    }
+  }
+
+  @include md {
+    &::after {
+      content: "";
+      height: 50%;
+      width: 50%;
+      z-index: -2222;
+      background-image: url("../../manage/images/bg-tablet-pattern.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      @include positionElem($pos: absolute, $top: 55rem, $left: -10rem);
+
+      @include lg {
+        background-size: 90%;
+      @include positionElem($pos: absolute, $top: 55rem, $left: -15rem);
+
+        height: 100%;
+      }
+    }
+  }
+}

@@ -1,31 +1,16 @@
-import React, { useEffect, useRef, useState } from "react";
-import EasyBankLogo from "../easybank/images/logo.svg";
-import HamburgerIcon from "../easybank/images/icon-hamburger.svg";
-import CloseIcon from "../easybank/images/icon-close.svg";
+import React, { useState } from "react";
+import EasyBankLogo from "../manage/images/logo.svg";
+import HamburgerIcon from "../manage/images/icon-hamburger.svg";
+import CloseIcon from "../manage/images/icon-close.svg";
 
 export default function Navbar() {
   const [showBtn, setshowBtn] = useState(false);
-  const [scrollCount, setScrollCount] = useState(0);
-  const navRef = useRef();
 
   // showing & hiding the navbar on scroll.
-  useEffect(() => {
-    window.document.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.document.removeEventListener("scroll", handleScroll);
-    };
-  });
-
-  const handleScroll = (e) => {
-    if (window.scrollY > scrollCount) navRef.current.style.top = "-200px";
-    else navRef.current.style.top = "0";
-    setScrollCount(window.scrollY);
-  };
 
   return (
     <>
-      <nav className="nav" ref={navRef}>
+      <nav className="nav">
         <div className="container nav-bar ">
           <div className="brand">
             <a href="#">
@@ -36,19 +21,19 @@ export default function Navbar() {
           <input type="checkbox" name="navigation" id="chck" hidden />
           <ul className="nav-links">
             <li>
-              <a href="#">Home</a>
+              <a href="#">Pricing</a>
             </li>
             <li>
-              <a href="#">About</a>
+              <a href="#">Product</a>
             </li>
             <li>
-              <a href="#">Contact</a>
-            </li>
-            <li>
-              <a href="#">Blog</a>
+              <a href="#">AboutUs</a>
             </li>
             <li>
               <a href="#">Careers</a>
+            </li>
+            <li>
+              <a href="#">Community</a>
             </li>
           </ul>
 
@@ -61,7 +46,7 @@ export default function Navbar() {
               )}
             </label>
           </div>
-          <button className="btn">Request Invite</button>
+          <button className="btn">Get Started</button>
         </div>
       </nav>
     </>

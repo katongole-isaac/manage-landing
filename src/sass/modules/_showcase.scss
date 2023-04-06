@@ -1,195 +1,52 @@
-@mixin bg-image(
-  $width: 100%,
-  $divTop: 0rem,
-  $divRight: 0rem,
-  $bgSize: cover,
-  $bgTop: 0rem,
-  $bgRight: 0rem
-) {
-  width: $width;
-  top: $divTop;
-  right: $divRight;
-  background-size: $bgSize;
-  background-position: top $bgTop right $bgRight;
-}
-
-//homepage configs
-@mixin hmpageBg($pos: relative, $minH: 0, $order: 0) {
-  position: $pos;
-  min-height: $minH;
-  order: $order;
-}
-
 .show-case {
-  min-height: 65vh;
-  display: grid;
-  grid-template-columns: 1fr;
+  background-color: $bright-red;
+  color: $white;
 
-  .right-panel {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    right: 2%;
-    top: -5%;
-    background-image: url("../../easybank/images/image-mockups.png");
-    clip-path: inset(12.2% 0% 0% 0%);
+  background-image: url("../../manage/images/bg-simplify-section-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left 1em;
 
-    background-repeat: no-repeat;
-    object-fit: cover;
-  }
-
-  .left-panel {
-    align-self: center;
+  div {
+    padding: 3em;
     text-align: center;
-    position: relative;
-    top: -10%;
-    z-index: 2;
-    // flex from navbar module
-    @include flex;
-    gap: 2em;
-    flex-direction: column;
-    order: 2;
-    @include lg {
-      text-align: initial;
-    }
-
-    h1 {
-      font-weight: 300;
-      font-size: 50px;
-      letter-spacing: 0.1em;
-      color: $dark-blue;
-    }
-
+    @include flexProps($dir: column, $gap: 2em);
     p {
-      color: $grayish-blue;
-      line-height: 1.5em;
-      word-spacing: 0.25em;
+      font-size: 3.5rem;
+      font-weight: 700;
+
+      @include md {
+        font-size: 3rem;
+        width: 50%;
+      }
     }
 
     button {
+      display: inline-block;
       margin: auto;
-
-      // button @lg screen
-      @include lg {
-        margin: 0;
+      width: 200px;
+      padding: 1em;
+      font-size: 18px;
+      background: $white;
+      color: $bright-red;
+      transition: color, background 0.3s;
+      &:hover {
+        color: $white;
+        background-color: $bright-red;
       }
-    }
-
-    // left panel @xs screen
-    @include xs {
-      padding: 2rem 0;
-    }
-
-    @include sm {
-      padding: 3em;
-    }
-    @include md {
-      padding: 1em 0;
-    }
-  }
-}
-
-.show-case-wrapper {
-  position: relative;
-  .homepage-bg {
-    width: 100vw;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    &::after {
-      content: "";
-      width: 90%;
-      height: 75rem;
-      position: absolute;
-      right: -35rem;
-      top: -25rem;
-      background-size: contain;
-      background-image: url("../../easybank/images/bg-intro-desktop.svg");
-      background-repeat: no-repeat;
-
-      // .homepage-bg::after @xs screen
-      @include xs {
-        height: 70rem;
-        @include bg-image($divTop: -35rem, $bgRight: -30rem);
+      @include md {
+        align-self: center;
+        margin: initial;
       }
-      // .homepage-bg::after @sm screen
-      @include sm {
-        @include bg-image($divTop: -10rem, $bgRight: -20rem, $bgTop: -30rem);
-      }
-
-      @include lg {
-        height: 75rem;
-        @include bg-image(
-          $divTop: -25rem,
-          $bgSize: contain,
-          $bgRight: -22rem,
-          $bgTop: 0rem
-        );
-      }
-    }
-
-    // showcase @xs screen
-    @include xs {
-      @include hmpageBg($minH: 30rem, $order: 1);
-    }
-
-    @include sm {
-      @include hmpageBg($minH: 35rem, $order: 1);
-    }
-    @include lg {
-      @include hmpageBg($pos: absolute);
-    }
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    min-width: 24rem;
-    background-image: url("../../easybank/images/image-mockups.png");
-    background-repeat: no-repeat;
-    left: auto;
-    transform: none;
-    max-width: none;
-
-    @include bg-image(
-      $width: 57%,
-      $divRight: -17rem,
-      $divTop: -6rem,
-      $bgSize: contain
-    );
-
-    //show-case-wrapper::after @xs screen
-    @include xs {
-      transform: translate(-50%);
-      height: 30rem;
-      left: 50%;
-      max-width: 28rem;
-      @include bg-image($bgSize: contain);
-    }
-
-    //show-case-wrapper::after @sm screen
-    @include sm {
-      height: 100%;
-      @include bg-image($bgSize: contain, $divTop: -18rem, $divRight: 0rem);
     }
 
     @include md {
-      height: 90%;
-      @include bg-image($bgSize: contain, $divTop: -16rem, $divRight: 6rem);
-    }
+      width: 100%;
 
-    @include lg {
-      height: 60rem;
-      @include bg-image(
-        $bgSize: contain,
-        $divTop: -8rem,
-        $divRight: 2rem,
-        $width: 57%
-      );
+      text-align: initial;
+      padding: 2em 0;
+      @include flexProps($jsfy: space-between, $algn: center);
     }
   }
-
-  background: $very-light-gray;
+  // end of the containing div styles
 }

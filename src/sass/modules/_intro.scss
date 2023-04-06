@@ -1,0 +1,59 @@
+.intro-wrapper {
+  .illustration {
+    width: 100%;
+    padding: 1em;
+
+    @include md {
+      width: auto;
+    }
+  }
+
+  .intro-content {
+    text-align: center;
+    @include flexProps($dir: column, $gap: 1.2em, $algn: center);
+    padding: 4em 1em;
+    h1 {
+      color: $dark-blue;
+      font-size: 3rem;
+    }
+    p {
+      color: $grayish-blue;
+      @include text-configs;
+      font-size: 20px;
+    }
+
+    &::after {
+      content: "";
+      height: 50rem;
+      width: 100%;
+      z-index: -2222;
+
+      background-image: url("../../manage/images/bg-tablet-pattern.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      @include positionElem($pos: absolute, $top: 30rem, $left: 60%);
+
+      @include md {
+        display: none;
+      }
+    }
+
+    @include md {
+      text-align: initial;
+      flex-basis: 60%;
+      @include flexProps($dir: column, $gap: 2em, $algn: initial);
+    }
+
+    @include lg {
+      flex-basis: 40%;
+      margin-right: auto;
+    }
+  }
+
+  // .intro @md screen
+  .intro {
+    @include md {
+      @include flexProps($dir: row-reverse);
+    }
+  }
+}
