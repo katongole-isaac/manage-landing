@@ -37,4 +37,3 @@ The landing page is available [here](https://katongole-isaac.github.io/easybank/
 
 - [LinkedIn](https://www.linkedin.com/in/katongole-isaac-7a22aa178/ "LinkedIn")
 - [Gmail](mailto:katongolelsaac78@gmail.com, "Gmail")
-- [Twitter]
